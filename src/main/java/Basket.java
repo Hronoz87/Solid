@@ -1,7 +1,8 @@
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Basket {
+public class Basket implements Filter{
 
     protected Map<Product, Integer> baskets;
 
@@ -44,4 +45,7 @@ public class Basket {
         this.baskets = baskets;
     }
 
+    @Override
+    public void filter() {
+    }
 }

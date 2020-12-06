@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class ProductList {
+// Принцип единой ответственности (Вынес метод создания списка продуктов в отдельный класс)
+
+public class ProductList implements Filter{
     protected List<Product> productList;
 
     public ProductList(List<Product> productList) {
@@ -66,6 +68,12 @@ public class ProductList {
                 .forEach(System.out::println);
     }
 
+    @Override
+    public void filter() {
+        productList.stream()
+                .sorted(Comparator.comparing(Product::getWeight))
+                .forEach(System.out::println);
+    }
 }
 
 
