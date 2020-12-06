@@ -16,10 +16,7 @@ public class Main {
                     Выберите действие:
                     1. Вывод доступных для покупки товаров
                     2. Фильтр товаров по цене
-                    3. Фильтр товаров по типу
-                    4. Фильтр товаров по рейтингу
-                    5. Фильтр товаров по имени
-                    6. Вывод корзины на экран
+                    3. Вывод корзины на экран
                     0. Выход""");
             try {
                 choice = scanner.nextInt();
@@ -30,22 +27,10 @@ public class Main {
                         break;
                     case 2:
                         choice = 2;
-                        productList.filterPrice();
+                        productList.filter();
                         break;
                     case 3:
                         choice = 3;
-                        productList.filterType();
-                        break;
-                    case 4:
-                        choice = 4;
-                        productList.filterRating();
-                        break;
-                    case 5:
-                        choice = 5;
-                        productList.filterName();
-                        break;
-                    case 6:
-                        choice = 7;
                         baskets.getBaskets();
                         break;
                 }
