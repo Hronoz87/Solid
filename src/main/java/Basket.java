@@ -44,8 +44,4 @@ public class Basket implements Filter{
     public void setBaskets(Map<Product, Integer> baskets) {
         this.baskets = baskets;
     }
-
-    @Override
-    public void filter() {
-    }
 }

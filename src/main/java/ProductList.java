@@ -9,7 +9,7 @@ public class ProductList implements Filter{
 
     public ProductList(List<Product> productList) {
         this.productList = productList;
-    }
+    } //Принцип инверсии зависимостей
 
     public ProductList() {
 
@@ -44,34 +44,10 @@ public class ProductList implements Filter{
         }
     }
 
-    protected void filterPrice() {
-        productList.stream()
-                .sorted(Comparator.comparing(Product::getPrice))
-                .forEach(System.out::println);
-    }
-
-    protected void filterType() {
-        productList.stream()
-                .sorted(Comparator.comparing(Product::getTypeProducts))
-                .forEach(System.out::println);
-    }
-
-    protected void filterRating() {
-        productList.stream()
-                .sorted(Comparator.comparing(Product::getRating))
-                .forEach(System.out::println);
-    }
-
-    protected void filterName() {
-        productList.stream()
-                .sorted(Comparator.comparing(Product::getName))
-                .forEach(System.out::println);
-    }
-
     @Override
     public void filter() {
         productList.stream()
-                .sorted(Comparator.comparing(Product::getWeight))
+                .sorted(Comparator.comparing(Product::getPrice))
                 .forEach(System.out::println);
     }
 }
